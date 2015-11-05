@@ -25,7 +25,7 @@ run: run the program
 How to compile
 ==========
 
-**Akka/Scala**
+**Akka**
 
     install sbt: http://www.scala-sbt.org/release/tutorial/Setup.html
 
