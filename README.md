@@ -12,7 +12,13 @@ The points are in `points.json`, and are to be grouped into 10 clusters, using 1
 Contribute
 ==========
 
-If you want to contribute an implementation in a different language, please file a PR. Try to follow the same logic that is used in the examples in other languages - for instance, using a group by operation where available. As you may notice, the algorithm is not optimized, and intentionally so: while K-means in particular has various possible optimizations, other similar algorithms may fail to have the particular shape that makes these optimizations viable.
+If you want to contribute an implementation in a different language, please file a PR. Try to follow the same logic that is used in the examples in other languages.
+The intended logic steps are:
+  - calculate closest centroid for each point trying to maximize parallelism
+  - sync
+  - calculate new centroids value
+  - sync
+As you may notice, the algorithm is not optimized, and intentionally so: while K-means in particular has various possible optimizations, other similar algorithms may fail to have the particular shape that makes these optimizations viable.
 Hard code a flag to print final centroids at the last step.
 
 Please within contribution write a couple of lines on the dependencies to install and provide a proper Makefile that do the follows:
@@ -25,9 +31,13 @@ run: run the program
 How to compile
 ==========
 
-**Akka/Scala**
+**Akka**
 
     install sbt: http://www.scala-sbt.org/release/tutorial/Setup.html
+
+**Erlang**
+
+    install erlang: https://www.erlang-solutions.com/downloads
 
 **Pony**
 
