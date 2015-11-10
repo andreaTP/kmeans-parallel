@@ -3,6 +3,7 @@ default: all
 
 clean:
 	rm *.beam
+	rm *.dump
 
 all:
 	erl -make
