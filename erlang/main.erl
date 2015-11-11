@@ -8,10 +8,9 @@ iters() -> 15.
 
 run() ->
   StartTime = kmeans:now_ms(),
-  timer:apply_after(5000, main, endit, [StartTime]).
-  %Xs = read_points("../points.json"),
-  %kmeans:start(Xs, n(), iters(), true, iterations()),
-  %io:format("Starting~n", []).
+  Xs = read_points("../points.json"),
+  kmeans:start(Xs, n(), iters(), true, iterations()),
+  io:format("Starting~n", []).
 
 endit(Start) ->
   End = kmeans:now_ms(),
